@@ -10,6 +10,7 @@ import { styleBiere } from '../style-biere/style-biere.component'
 export class StylesBiereComponent implements OnInit {
 
   styles: styleBiere[];
+  styles2: any[];
 
   constructor(private StyleBiereService: StyleBiereService) { }
 
@@ -18,7 +19,9 @@ export class StylesBiereComponent implements OnInit {
   }
 
   getStyles(): void {
-    this.StyleBiereService.getStyles().then(styles => this.styles = styles)
+    //this.StyleBiereService.getStyles().then(styles => this.styles = styles)
+    //this.StyleBiereService.getStyles().then(styles => this.styles2 = styles)
+    this.StyleBiereService.getStyles().then(styles => console.log(styles))
   }
 
 }
