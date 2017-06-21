@@ -15,6 +15,10 @@ import { StyleBiereService } from './style-biere/style-biere.service';
 import { CallbackComponent } from './callback/callback.component';
 import { StylesBiereComponent } from './styles-biere/styles-biere.component';
 import { StyleBiereComponent } from './style-biere/style-biere.component';
+import { BieresComponent } from './bieres/bieres.component';
+import { BiereComponent } from './biere/biere.component';
+import { BeersComponent } from './beers/beers.component';
+import { BeerDetailComponent } from './beer-detail/beer-detail.component';
 
 
 @NgModule({
@@ -23,7 +27,11 @@ import { StyleBiereComponent } from './style-biere/style-biere.component';
     HomeComponent,
     CallbackComponent,
     StylesBiereComponent,
-    StyleBiereComponent
+    StyleBiereComponent,
+    BieresComponent,
+    BiereComponent,
+    BeersComponent,
+    BeerDetailComponent
   ],
   imports: [
     BrowserModule,
