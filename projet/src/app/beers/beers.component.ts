@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BeerDetailService } from './beer-detail.service';
-import { BeerDetail } from './beer-detail.component';
+import { BeerDetailService } from '../beer-detail/beer-detail.service';
+import { BeerDetail } from '../beer-detail/beer-detail.component';
 
 @Component({
   selector: 'app-beers',

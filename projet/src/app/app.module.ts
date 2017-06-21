@@ -11,12 +11,11 @@ import { ROUTES } from './app.routes';
 
 import { AuthService } from './auth/auth.service';
 import { StyleBiereService } from './style-biere/style-biere.service';
+import { BeerDetailService } from './beer-detail/beer-detail.service';
 
 import { CallbackComponent } from './callback/callback.component';
 import { StylesBiereComponent } from './styles-biere/styles-biere.component';
 import { StyleBiereComponent } from './style-biere/style-biere.component';
-import { BieresComponent } from './bieres/bieres.component';
-import { BiereComponent } from './biere/biere.component';
 import { BeersComponent } from './beers/beers.component';
 import { BeerDetailComponent } from './beer-detail/beer-detail.component';
 
@@ -28,8 +27,6 @@ import { BeerDetailComponent } from './beer-detail/beer-detail.component';
     CallbackComponent,
     StylesBiereComponent,
     StyleBiereComponent,
-    BieresComponent,
-    BiereComponent,
     BeersComponent,
     BeerDetailComponent
   ],
@@ -39,7 +36,7 @@ import { BeerDetailComponent } from './beer-detail/beer-detail.component';
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true })
   ],
-  providers: [AuthService, StyleBiereService],
+  providers: [AuthService, StyleBiereService, BeerDetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
