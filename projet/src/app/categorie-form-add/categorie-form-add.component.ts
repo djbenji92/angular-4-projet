@@ -12,18 +12,22 @@ export class CategorieFormAddComponent implements OnInit {
 
 
   private categorie: Categorie;
+  public add: boolean;
 
   constructor(private ApiRestaurant: ApiRestaurant) {
   }
 
   ngOnInit() {
+    this.add = false;
   }
 
   onSubmit(categorie: NgForm) {
     this.categorie = categorie.value;
-    this.ApiRestaurant.addCategorie(this.categorie).subscribe(
+    this.ApiRestaurant.addCategorie(this.categorie)
+      .subscribe(
          result => {
-           console.log(result);
+           this.categorie = result;
+           this.add = true;
          }
         )
 
