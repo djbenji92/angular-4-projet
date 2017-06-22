@@ -10,14 +10,15 @@ import { HomeComponent } from './home/home.component';
 import { ROUTES } from './app.routes';
 
 import { AuthService } from './auth/auth.service';
-import { CategoryDetailService } from './category-detail/category-detail.service';
 import { RestaurantDetailService } from './restaurant-detail/restaurant-detail.service';
+import { ApiRestaurant } from './api-restaurant/api-restaurant.service';
 
 import { CallbackComponent } from './callback/callback.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoryDetailComponent } from './category-detail/category-detail.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
+import { CategorieFormAddComponent } from './categorie-form-add/categorie-form-add.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail
     CategoriesComponent,
     CategoryDetailComponent,
     RestaurantsComponent,
-    RestaurantDetailComponent
+    RestaurantDetailComponent,
+    CategorieFormAddComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,7 @@ import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true })
   ],
-  providers: [AuthService, CategoryDetailService, RestaurantDetailService],
+  providers: [AuthService, ApiRestaurant, RestaurantDetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

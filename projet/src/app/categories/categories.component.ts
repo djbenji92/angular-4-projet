@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoryDetailService } from '../category-detail/category-detail.service';
-import { CategoryDetail } from '../category-detail/category-detail.component'
+import { ApiRestaurant } from '../api-restaurant/api-restaurant.service';
+import { Categorie } from './categories.modele';
 
 @Component({
   selector: 'app-categories',
@@ -11,7 +11,7 @@ export class CategoriesComponent implements OnInit {
 
   categories: Categorie[];
 
-  constructor(private CategoryDetailService: CategoryDetailService) { }
+  constructor(private ApiRestaurant: ApiRestaurant) { }
 
   ngOnInit() {
     this.getCategories();
@@ -19,7 +19,7 @@ export class CategoriesComponent implements OnInit {
 
   getCategories() {
 
-    this.CategoryDetailService.getCategories()
+    this.ApiRestaurant.getCategories()
         .subscribe(
          result => {
            this.categories = result;
@@ -28,9 +28,4 @@ export class CategoriesComponent implements OnInit {
         )
   }
 
-}
-
-export class Categorie{
-  id: number;
-  name: string;
 }

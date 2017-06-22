@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { CategoryDetailService } from './category-detail.service';
+import { ApiRestaurant } from './api-restaurant.service';
 
 describe('CategoryDetailService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [CategoryDetailService]
+      providers: [ApiRestaurant]
     });
   });
 
-  it('should be created', inject([CategoryDetailService], (service: CategoryDetailService) => {
+  it('should be created', inject([ApiRestaurant], (service: ApiRestaurant) => {
     expect(service).toBeTruthy();
   }));
 });
