@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
-import { styleBiere } from './style-biere.component';
-import { STYLES } from './mock-styles'
+import { CategoryDetail } from './category-detail.component';
+import { CATEGORIES } from './mock-categories'
 import { Http, RequestOptions, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class StyleBiereService {
+export class CategoryDetailService {
 
-    private beerUrl = 'https://developers.zomato.com/api/v2.1/categories';
+    private url = 'https://developers.zomato.com/api/v2.1/categories';
     private key = "378c1121eca87ac3751004d5ff0f104a";
 
     constructor(private http: Http, private RequestOptions: RequestOptions) {
      }
 
-    getStyles(){
+    getCategories(){
         let headers = new Headers();
         
         /*headers.append('Access-Control-Allow-Origin', '*');
@@ -25,7 +25,7 @@ export class StyleBiereService {
 
         let options = new RequestOptions({ headers: headers });
 
-        return this.http.get(this.beerUrl, options)
+        return this.http.get(this.url, options)
                     .map((res) => res.json());
 
         
