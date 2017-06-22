@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RestaurantDetailService } from './restaurant-detail.service';
+import { ApiRestaurant } from '../api-restaurant/api-restaurant.service';
 
 @Component({
   selector: 'app-restaurant-detail',
@@ -8,7 +9,7 @@ import { RestaurantDetailService } from './restaurant-detail.service';
 })
 export class RestaurantDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ApiRestaurant: ApiRestaurant) { }
 
   ngOnInit() {
   }

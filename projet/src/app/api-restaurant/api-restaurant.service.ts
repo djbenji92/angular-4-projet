@@ -19,4 +19,11 @@ export class ApiRestaurant {
              .map((res) => res.json()); 
     }
 
+    getRestaurants(){
+        let endPoint = "restaurants"
+
+        return this.http.get(this.baseUrl + endPoint)
+             .map((res) => res.json()); 
+    }
+
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestaurantDetailService } from '../restaurant-detail/restaurant-detail.service';
 import { RestaurantDetail } from '../restaurant-detail/restaurant-detail.component';
+import { ApiRestaurant } from '../api-restaurant/api-restaurant.service';
 
 @Component({
   selector: 'app-restaurants',
@@ -11,15 +12,20 @@ export class RestaurantsComponent implements OnInit {
 
   restaurants: RestaurantDetail[];
   
-  constructor(private RestaurantDetailService: RestaurantDetailService) { }
+  constructor(private ApiRestaurant: ApiRestaurant) { }
 
   ngOnInit() {
   	this.getRestaurants();
   }
 
   getRestaurants(): void {
-    this.RestaurantDetailService.getRestaurants().then(
-    restaurants => this.restaurants = restaurants)
+    this.ApiRestaurant.getRestaurants()
+        .subscribe(
+         result => {
+           this.restaurants = result;
+           console.log(this.restaurants);
+         }
+        )
   }
 
 }
