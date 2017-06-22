@@ -14,6 +14,13 @@ export class ApiRestaurant {
     constructor(private http: Http) {
      }
 
+    getCategorie(id: any){
+      let endPoint = "categories/"+id
+
+        return this.http.get(this.baseUrl + endPoint)
+             .map((res) => res.json()); 
+    }
+
     getCategories(){
         let endPoint = "categories";
 
@@ -31,6 +38,15 @@ export class ApiRestaurant {
     addCategorie(categorie: Categorie){
         let endPoint = "categories";
         
+        console.log(categorie);
+
+        return this.http
+        .post(this.baseUrl + endPoint, JSON.stringify({'name': categorie.name}), {headers: this.headers})   
+            .map((res) => res.json());
+    }
+
+    updateCategorie(categorie: Categorie){
+        let endPoint = "categories";
         console.log(categorie);
 
         return this.http

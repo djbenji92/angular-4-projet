@@ -3,5 +3,7 @@
 </p>
 
 <li *ngFor="let category of categories">
-    {{category.name}}
+    <a [routerLink]="['/categories/edit', category._id]">
+    	{{category.name}}
+    </a>
 </li>
