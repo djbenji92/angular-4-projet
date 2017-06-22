@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategorieFormAddComponent implements OnInit {
 
+  name: string;
+
   constructor() { }
 
   ngOnInit() {
   }
+
+  newCategorie(){
+    console.log('ok');
+  }
+
 
 }

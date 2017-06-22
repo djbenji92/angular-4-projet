@@ -1,3 +1,12 @@
-<p>
-  categorie-form-add works!
-</p>
+<div class="container">
+    <h1>Ajouter une catégorie</h1>
+    <form>
+      <div class="form-group">
+        <label for="name">Nom</label>
+        <input [(ngModel)]="categorie.name" type="text" required class="form-control" id="name" required>
+      </div>
+ 
+      <button (click)="newCategorie()" type="submit" class="btn btn-success">Submit</button>
+ 
+    </form>
+</div>
