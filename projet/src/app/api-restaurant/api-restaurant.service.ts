@@ -7,14 +7,16 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ApiRestaurant {
 
-    private url = 'http://localhost:3000/categories';
+    private baseUrl = 'http://localhost:3000/';
 
     constructor(private http: Http, private RequestOptions: RequestOptions) {
      }
 
     getCategories(){
-        return this.http.get(this.url)
-                    .map((res) => res.json()); 
+        let endPoint = "categories"
+
+        return this.http.get(this.baseUrl + endPoint)
+             .map((res) => res.json()); 
     }
 
 }

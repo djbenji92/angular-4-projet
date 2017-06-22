@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiRestaurant } from '../api-restaurant/api-restaurant.service';
+import { Categorie } from './categories.modele';
 
 @Component({
   selector: 'app-categories',
@@ -27,9 +28,4 @@ export class CategoriesComponent implements OnInit {
         )
   }
 
-}
-
-export class Categorie{
-  id: number;
-  name: string;
 }
