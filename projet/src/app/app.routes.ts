@@ -7,6 +7,7 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 import {  CategorieFormAddComponent} from './categorie-form-add/categorie-form-add.component';
 import {  CategorieFormUpdateComponent} from './categorie-form-update/categorie-form-update.component';
+import {  CategorieFormDeleteComponent } from './categorie-form-delete/categorie-form-delete.component';
 
 
 export const ROUTES: Routes = [
@@ -16,6 +17,7 @@ export const ROUTES: Routes = [
   { path: 'categories', component: CategoriesComponent },
   { path: 'categories/new', component: CategorieFormAddComponent },
   { path: 'categories/edit/:id', component: CategorieFormUpdateComponent },
+  { path: 'categories/delete', component: CategorieFormDeleteComponent },
   { path: 'restaurant-detail/:id', component: RestaurantDetailComponent },
   { path: 'restaurants', component: RestaurantsComponent }
 ];
