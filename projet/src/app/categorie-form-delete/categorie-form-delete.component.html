@@ -1,3 +1,7 @@
-<p>
-  categorie-form-delete works!
-</p>
+<h1>Suppression d'une catégorie<h1>
+
+<li *ngFor="let category of categories">
+    	{{category.name}}
+    <button class="delete"
+    (click)="delete(category);">x</button>
+</li>

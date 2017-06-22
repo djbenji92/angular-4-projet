@@ -45,6 +45,15 @@ export class ApiRestaurant {
             .map((res) => res.json());
     }
 
+    deleteCategorie(id: string){
+    
+        let endPoint = "categories/" + id;
+        
+        return this.http
+        .delete(this.baseUrl + endPoint)   
+            .map((res) => res.json());
+    }
+
     updateCategorie(categorie: Categorie){
         let endPoint = "categories";
         console.log(categorie);
