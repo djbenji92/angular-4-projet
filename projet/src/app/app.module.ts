@@ -20,6 +20,7 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 import { CategorieFormAddComponent } from './categorie-form-add/categorie-form-add.component';
 import { CategorieFormUpdateComponent } from './categorie-form-update/categorie-form-update.component';
+import { CategorieFormDeleteComponent } from './categorie-form-delete/categorie-form-delete.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { CategorieFormUpdateComponent } from './categorie-form-update/categorie-
     RestaurantsComponent,
     RestaurantDetailComponent,
     CategorieFormAddComponent,
-    CategorieFormUpdateComponent
+    CategorieFormUpdateComponent,
+    CategorieFormDeleteComponent
   ],
   imports: [
     BrowserModule,
