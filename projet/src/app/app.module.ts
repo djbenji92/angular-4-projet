@@ -11,13 +11,13 @@ import { ROUTES } from './app.routes';
 
 import { AuthService } from './auth/auth.service';
 import { CategoryDetailService } from './category-detail/category-detail.service';
-import { BeerDetailService } from './beer-detail/beer-detail.service';
+import { RestaurantDetailService } from './restaurant-detail/restaurant-detail.service';
 
 import { CallbackComponent } from './callback/callback.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoryDetailComponent } from './category-detail/category-detail.component';
-import { BeersComponent } from './beers/beers.component';
-import { BeerDetailComponent } from './beer-detail/beer-detail.component';
+import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 
 
 @NgModule({
@@ -27,8 +27,8 @@ import { BeerDetailComponent } from './beer-detail/beer-detail.component';
     CallbackComponent,
     CategoriesComponent,
     CategoryDetailComponent,
-    BeersComponent,
-    BeerDetailComponent
+    RestaurantsComponent,
+    RestaurantDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +36,7 @@ import { BeerDetailComponent } from './beer-detail/beer-detail.component';
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true })
   ],
-  providers: [AuthService, CategoryDetailService, BeerDetailService],
+  providers: [AuthService, CategoryDetailService, RestaurantDetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

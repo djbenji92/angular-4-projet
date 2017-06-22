@@ -17,10 +17,6 @@ export class CategoryDetailService {
     getCategories(){
         let headers = new Headers();
         
-        /*headers.append('Access-Control-Allow-Origin', '*');
-        headers.append('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');
-        headers.append('Access-Control-Allow-Methods', 'POST, GET, PATCH, DELETE, OPTIONS');
-        headers.append('Content-Type', 'application/json');*/
         headers.append('user-key', '652f8085982c360f56e717c7b8bbe258')
 
         let options = new RequestOptions({ headers: headers });
