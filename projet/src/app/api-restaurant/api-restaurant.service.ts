@@ -9,19 +9,20 @@ import { Categorie} from '../categories/categories.modele';
 export class ApiRestaurant {
 
     private baseUrl = 'http://localhost:3000/';
+    private headers = new Headers({'Content-Type': 'application/json'});
 
-    constructor(private http: Http, private RequestOptions: RequestOptions) {
+    constructor(private http: Http) {
      }
 
     getCategories(){
-        let endPoint = "categories"
+        let endPoint = "categories";
 
         return this.http.get(this.baseUrl + endPoint)
              .map((res) => res.json()); 
     }
 
     getRestaurants(){
-        let endPoint = "restaurants"
+        let endPoint = "restaurants";
 
         return this.http.get(this.baseUrl + endPoint)
              .map((res) => res.json()); 
@@ -29,10 +30,12 @@ export class ApiRestaurant {
 
     addCategorie(categorie: Categorie){
         let endPoint = "categories";
+        
         console.log(categorie);
 
-        /*return this.http.get(this.baseUrl + endPoint)
-             .map((res) => res.json());*/ 
+        return this.http
+        .post(this.baseUrl + endPoint, JSON.stringify({'name': categorie.name}), {headers: this.headers})   
+            .map((res) => res.json());
     }
 
 }

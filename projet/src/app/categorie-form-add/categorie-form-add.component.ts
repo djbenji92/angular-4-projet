@@ -21,7 +21,11 @@ export class CategorieFormAddComponent implements OnInit {
 
   onSubmit(categorie: NgForm) {
     this.categorie = categorie.value;
-    this.ApiRestaurant.addCategorie(this.categorie)
+    this.ApiRestaurant.addCategorie(this.categorie).subscribe(
+         result => {
+           console.log(result);
+         }
+        )
 
   }
 
