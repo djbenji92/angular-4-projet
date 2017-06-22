@@ -10,8 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { ROUTES } from './app.routes';
 
 import { AuthService } from './auth/auth.service';
-import { CategoryDetailService } from './category-detail/category-detail.service';
 import { RestaurantDetailService } from './restaurant-detail/restaurant-detail.service';
+import { ApiRestaurant } from './api-restaurant/api-restaurant.service';
 
 import { CallbackComponent } from './callback/callback.component';
 import { CategoriesComponent } from './categories/categories.component';
@@ -36,7 +36,7 @@ import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true })
   ],
-  providers: [AuthService, CategoryDetailService, RestaurantDetailService],
+  providers: [AuthService, ApiRestaurant, RestaurantDetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

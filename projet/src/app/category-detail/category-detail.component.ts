@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoryDetailService } from './category-detail.service';
+import { ApiRestaurant } from '../api-restaurant/api-restaurant.service';
 
 @Component({
   selector: 'app-category-detail',
@@ -9,7 +9,7 @@ import { CategoryDetailService } from './category-detail.service';
 export class CategoryDetailComponent implements OnInit {
 
 
-  constructor(private CategoryDetailService: CategoryDetailService) { }
+  constructor(private ApiRestaurant: ApiRestaurant) { }
 
   ngOnInit() {
 
