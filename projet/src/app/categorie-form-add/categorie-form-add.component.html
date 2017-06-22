@@ -1,12 +1,18 @@
-<div class="container">
+<section id="bread">
+  <div  class="bread background_content">
     <h1>Ajouter une catégorie</h1>
-    <form>
-      <div class="form-group">
-        <label for="name">Nom</label>
-        <input [(ngModel)]="categorie.name" type="text" required class="form-control" id="name" required>
-      </div>
- 
-      <button (click)="newCategorie()" type="submit" class="btn btn-success">Submit</button>
- 
-    </form>
-</div>
+  </div>
+  <div class="text-content container" style="font-size: 24px;">
+    <div class="col-md-12">
+      <form>
+        <div class="form-group">
+          <label for="name">Nom de la catégorie :</label>
+          <input [(ngModel)]="categorie.name" type="text" required class="form-control" id="name" required>
+        </div>
+
+        <button (click)="newCategorie()" type="submit" class="btn btn-success">Valider</button>
+
+      </form>
+    </div>
+  </div>
+</section>
