@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from '@angular/forms';
+import {Categorie} from '../categories/categories.modele';
 
 @Component({
   selector: 'app-categorie-form-add',
@@ -7,15 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategorieFormAddComponent implements OnInit {
 
-  name: string;
 
-  constructor() { }
+  private categorie: Categorie;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
-  newCategorie(){
-    console.log('ok');
+  onSubmit(categorie: NgForm) {
+    console.log(categorie.value);
   }
 
 
