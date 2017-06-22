@@ -3,6 +3,7 @@ import { CategoryDetail } from '../category-detail/category-detail.component';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
+import { Categorie} from '../categories/categories.modele';
 
 @Injectable()
 export class ApiRestaurant {
@@ -24,6 +25,14 @@ export class ApiRestaurant {
 
         return this.http.get(this.baseUrl + endPoint)
              .map((res) => res.json()); 
+    }
+
+    addCategorie(categorie: Categorie){
+        let endPoint = "categories";
+        console.log(categorie);
+
+        /*return this.http.get(this.baseUrl + endPoint)
+             .map((res) => res.json());*/ 
     }
 
 }
