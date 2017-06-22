@@ -9,7 +9,7 @@ import { CategoryDetail } from '../category-detail/category-detail.component'
 })
 export class CategoriesComponent implements OnInit {
 
-  categories: any[];
+  categories: Categorie[];
 
   constructor(private CategoryDetailService: CategoryDetailService) { }
 
@@ -20,13 +20,17 @@ export class CategoriesComponent implements OnInit {
   getCategories() {
 
     this.CategoryDetailService.getCategories()
-                     .subscribe(
-                       result => {
-                         console.log(result);
-                         this.categories = result;
-                        }
-                      )
-                       //error =>  this.errorMessage = <any>error);
+        .subscribe(
+         result => {
+           this.categories = result;
+           console.log(this.categories);
+         }
+        )
   }
 
+}
+
+export class Categorie{
+  id: number;
+  name: string;
 }
