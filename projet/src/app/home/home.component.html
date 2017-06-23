@@ -1,13 +1,13 @@
 <div id="top" class="starter_container bg">
   <div class="follow_container">
     <div class="col-md-6 col-md-offset-3">
-      <h2 class="top-title"> RestaurantIdeas</h2>
+      <h2 class="top-title"> Restaurant</h2>
       <hr>
       <h4 *ngIf="auth.isAuthenticated()" style="color:white;">
         Vous êtes connectés !
       </h4>
       <h4 *ngIf="!auth.isAuthenticated()" class="loginHome">
-        Vous n'êtes pas connecrés ! <a (click)="auth.login()">Connectez-vous</a> pour continuer.
+        Vous n'êtes pas connectés ! <a (click)="auth.login()">Connectez-vous</a> pour continuer.
       </h4>
     </div>
   </div>
