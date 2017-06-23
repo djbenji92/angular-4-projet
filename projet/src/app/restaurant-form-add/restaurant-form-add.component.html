@@ -1,0 +1,33 @@
+<div class="container">
+  <div style="display:flex; flex-direction:row;">
+    <div>
+      <h1>Ajouter un restaurant</h1>
+      <form #restaurant="ngForm" (ngSubmit)="onSubmit(restaurant); ">
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input name="name" ngModel required #name="ngModel">
+        </div>
+
+        <div class="form-group">
+          <label for="name">Catégorie</label>
+          <select class="form-control" id="categories" required>
+            <option *ngFor="let category of categories" [value]="category.name">{{category.name}}</option>
+          </select>
+        </div>
+  
+        <button type="submit" class="btn btn-success">Submit</button>
+  
+      </form>
+      <div *ngIf="add">Ajouter avec succès</div>
+    </div>
+</div>
+
+<p>
+  Nos différentes catégories
+</p>
+
+<li *ngFor="let category of categories">
+    <a [routerLink]="['/categories/edit', category._id]">
+    	{{category.name}}
+    </a>
+</li>

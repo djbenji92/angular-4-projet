@@ -5,7 +5,7 @@
     </div>
     <div>
       <h1>Ajouter une catégorie</h1>
-      <form #categorie="ngForm" (ngSubmit)="onSubmit(categorie)">
+      <form #categorie="ngForm" (ngSubmit)="onSubmit(categorie); ">
         <div class="form-group">
           <label for="name">Nom</label>
           <input name="name" ngModel required #name="ngModel">

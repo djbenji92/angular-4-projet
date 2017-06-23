@@ -17,7 +17,7 @@ export class CategoriesComponent implements OnInit {
     this.getCategories();
   }
 
-  getCategories() {
+  public getCategories() {
 
     this.ApiRestaurant.getCategories()
         .subscribe(

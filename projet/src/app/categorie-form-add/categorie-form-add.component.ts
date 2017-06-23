@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {Categorie} from '../categories/categories.modele';
-import { ApiRestaurant } from '../api-restaurant/api-restaurant.service'
+import { ApiRestaurant } from '../api-restaurant/api-restaurant.service';
 
 @Component({
   selector: 'app-categorie-form-add',
@@ -30,7 +30,6 @@ export class CategorieFormAddComponent implements OnInit {
            this.add = true;
          }
         )
-
   }
 
 

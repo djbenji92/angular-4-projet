@@ -4,6 +4,7 @@ import { Http, RequestOptions, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 import { Categorie} from '../categories/categories.modele';
+import { Restaurant } from '../restaurants/restaurants.model';
 
 @Injectable()
 export class ApiRestaurant {
@@ -60,6 +61,14 @@ export class ApiRestaurant {
 
         return this.http
         .post(this.baseUrl + endPoint, JSON.stringify({'name': categorie.name}), {headers: this.headers})   
+            .map((res) => res.json());
+    }
+
+    addRestaurant(restaurant: Restaurant, categorie: string){
+        let endPoint = "restaurants";
+        
+        return this.http
+        .post(this.baseUrl + endPoint, JSON.stringify({'name': restaurant.name, 'categorie':categorie}), {headers: this.headers})   
             .map((res) => res.json());
     }
 
