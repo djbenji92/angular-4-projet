@@ -72,7 +72,24 @@ export class ApiRestaurant {
         let endPoint = "restaurants";
         
         return this.http
-        .post(this.baseUrl + endPoint, JSON.stringify({'name': restaurant.name, 'categorie':categorie}), {headers: this.headers})   
+        .post(this.baseUrl + endPoint, JSON.stringify(
+            {'name': restaurant.name,
+             'categorie':categorie, 
+             'city':restaurant.city,
+             'latitude':restaurant.latitude,
+             'longitude':restaurant.longitude,
+             'image':restaurant.image
+            }), {headers: this.headers}
+        )   
+        .map((res) => res.json());
+    }
+
+    deleteRestaurant(id: string){
+    
+        let endPoint = "restaurants/" + id;
+        
+        return this.http
+        .delete(this.baseUrl + endPoint)   
             .map((res) => res.json());
     }
 
