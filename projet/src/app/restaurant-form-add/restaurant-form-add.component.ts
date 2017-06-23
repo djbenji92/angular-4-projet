@@ -14,15 +14,19 @@ export class RestaurantFormAddComponent implements OnInit {
   categories: Categorie[];
   restaurant: Restaurant;
 
+  //instancie le service d'api restaurant
   constructor(private ApiRestaurant: ApiRestaurant) { }
 
+  //recuperer les catégories au chargement de la page
   ngOnInit() {
     this.getCategories();
   }
 
+  
   public getCategories() {
-
+    //récupére les catégorie à partir du service ApiRestaurant
     this.ApiRestaurant.getCategories()
+        //promesse pour recuperer les données quand le traitement est terminé
         .subscribe(
          result => {
            this.categories = result;
@@ -31,6 +35,7 @@ export class RestaurantFormAddComponent implements OnInit {
         )
   }
 
+  //validation du formulaire
   onSubmit(restaurant: NgForm) {
     console.log(restaurant.value)
     let refCategorie = "594c1c8ee6c06dd5ce335282";
@@ -41,7 +46,6 @@ export class RestaurantFormAddComponent implements OnInit {
            console.log(result);
          }
         )
-    //this.categorie = categorie.value;
     
   }
 
