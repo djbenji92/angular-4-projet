@@ -80,4 +80,13 @@ export class ApiRestaurant {
         .map((res) => res.json());
     }
 
+    deleteRestaurant(id: string){
+    
+        let endPoint = "restaurants/" + id;
+        
+        return this.http
+        .delete(this.baseUrl + endPoint)   
+            .map((res) => res.json());
+    }
+
 }
