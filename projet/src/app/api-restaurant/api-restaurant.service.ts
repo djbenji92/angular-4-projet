@@ -56,12 +56,16 @@ export class ApiRestaurant {
     }
 
     updateCategorie(categorie: Categorie){
-        let endPoint = "categories";
+        let endPoint = "categories/"+categorie._id;
         console.log(categorie);
 
         return this.http
-        .post(this.baseUrl + endPoint, JSON.stringify({'name': categorie.name}), {headers: this.headers})   
-            .map((res) => res.json());
+        .put(this.baseUrl + endPoint, JSON.stringify({'name': categorie.name}), {headers: this.headers})   
+            .map((res) => {
+                res.json();
+                console.log("traitement fini");
+                console.log(res);
+            });
     }
 
     addRestaurant(restaurant: Restaurant, categorie: string){

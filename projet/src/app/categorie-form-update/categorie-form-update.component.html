@@ -4,21 +4,16 @@
 	      <app-categories></app-categories>
 	    </div>
 	    <h1>Editer une catégorie</h1>
-	    <form #category="ngForm" (ngSubmit)="onSubmit(category)">
+	    <form *ngIf="gastronomie">
 	      <div class="form-group">
 	        <label for="name">Nom</label>
-	        <!--<select class="form-control" id="name" required>
-	    		    <option *ngFor="let category of categories" 
-	    		    	[(ngModel)]="category.name" value="category.name">
-	    		    	{{category.name}}
-	    		    </option>
-	    		</select>-->
-	    		<input name="name" ngModel required #name="ngModel">
+	    		<input name="name" [(ngModel)]="gastronomie.name" required>
 	      </div>
 
 	 
-	      <button type="submit" class="btn btn-success">Submit</button>
+	      <button type="button" (click)="onSubmit()" class="btn btn-success">Submit</button>
 	 
 	    </form>
 	</div>
+	
 </div>

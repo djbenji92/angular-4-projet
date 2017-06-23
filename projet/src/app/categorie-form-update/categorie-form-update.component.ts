@@ -12,8 +12,7 @@ import 'rxjs/add/operator/switchMap';
   styleUrls: ['./categorie-form-update.component.css']
 })
 export class CategorieFormUpdateComponent implements OnInit {
-  
-  @Input() categorie: Categorie;
+  gastronomie:Categorie;
 
   constructor(
   		private ApiRestaurant: ApiRestaurant,
@@ -24,13 +23,20 @@ export class CategorieFormUpdateComponent implements OnInit {
     //récupération du bon id, + affichage dans le form
     this.route.params
 	    .switchMap((params: Params) => this.ApiRestaurant.getCategorie(params['id']))
-	    .subscribe(categorie => this.categorie = categorie);
+	    .subscribe(categorie => {
+	    	console.log('cuisine', categorie, typeof categorie, categorie.name);
+	    	this.gastronomie = categorie;
+	    });
   }
 
-  onSubmit(categorie: NgForm) {
-    this.categorie = categorie.value;
-    this.ApiRestaurant.updateCategorie(this.categorie)
-
-  }
+  onSubmit() {
+  	console.log('submit', this.gastronomie);
+    this.ApiRestaurant.updateCategorie(this.gastronomie)
+    				  .subscribe(
+				         result => {
+				           console.log("terminé");
+				         }
+				      )
+  	}
 
 }
