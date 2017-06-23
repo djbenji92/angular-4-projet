@@ -37,7 +37,9 @@ export class ApiRestaurant {
              .map((res) => res.json()); 
     }
 
-<<<<<<< HEAD
+    /*  url: localhost:3000/restaurants/:id
+        méthode: GET
+        description: permet la récupération d'un restaurant */
     getRestaurant(id: any){
       let endPoint = "restaurants/"+id
 
@@ -45,11 +47,9 @@ export class ApiRestaurant {
              .map((res) => res.json()); 
     }
 
-=======
     /*  url: localhost:3000/restaurants 
         méthode: GET
         description: permet la récupération de l'ensemble des restaurants */
->>>>>>> add coments
     getRestaurants(){
         let endPoint = "restaurants";
 
@@ -101,7 +101,7 @@ export class ApiRestaurant {
             });
     }
 
-    /*  url: localhost:3000/categories/:id
+    /*  url: localhost:3000/restaurant/:id
         méthode: POST
         description: permet l'ajout d'un restaurant
         paramétres: id:string                          */
@@ -121,6 +121,10 @@ export class ApiRestaurant {
         .map((res) => res.json());
     }
 
+    /*  url: localhost:3000/restaurant/:id
+        méthode: UPDATE
+        description: permet de mettre à jour un restaurant
+        paramétres: id:string                          */
     updateRestaurant(restaurant: Restaurant){
         let endPoint = "restaurants/"+restaurant._id;
         console.log(restaurant);
