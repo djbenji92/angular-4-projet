@@ -29,6 +29,13 @@ export class ApiRestaurant {
              .map((res) => res.json()); 
     }
 
+    getRestaurant(id: any){
+      let endPoint = "restaurants/"+id
+
+        return this.http.get(this.baseUrl + endPoint)
+             .map((res) => res.json()); 
+    }
+
     getRestaurants(){
         let endPoint = "restaurants";
 
@@ -82,6 +89,19 @@ export class ApiRestaurant {
             }), {headers: this.headers}
         )   
         .map((res) => res.json());
+    }
+
+    updateRestaurant(restaurant: Restaurant){
+        let endPoint = "restaurants/"+restaurant._id;
+        console.log(restaurant);
+
+        return this.http
+        .put(this.baseUrl + endPoint, JSON.stringify({'name': restaurant.name, 'city': restaurant.city, 'latitude': restaurant.latitude, 'longitude': restaurant.longitude, 'image': restaurant.image, 'categorie': restaurant.categorie}), {headers: this.headers})   
+            .map((res) => {
+                res.json();
+                console.log("traitement fini");
+                console.log(res);
+            });
     }
 
     deleteRestaurant(id: string){

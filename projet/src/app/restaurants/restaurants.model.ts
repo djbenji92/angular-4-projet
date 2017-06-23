@@ -1,5 +1,5 @@
 export class Restaurant{
-  id: number;
+  _id: string;
   name: string;
   city: string;
   latitude: string

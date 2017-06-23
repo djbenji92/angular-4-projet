@@ -4,8 +4,11 @@
 
 <li *ngFor="let restaurant of restaurants">
     {{restaurant.name}}
-    {{restaurant.city}}
-    {{restaurant.longitude}}
-    {{restaurant.latitude}}
-    {{restaurant.image}}
+    <!--<a [routerLink]="['/restaurant-detail', restaurant._id]">
+    	Détails
+    </a>-->
+    
+    <a [routerLink]="['/restaurants/edit', restaurant._id]">
+    	Editer
+    </a>
 </li>
