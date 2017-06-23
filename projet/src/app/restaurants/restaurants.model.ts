@@ -4,7 +4,6 @@ export class Restaurant{
   city: string;
   latitude: string
   longitude: string
-  url: string 
   image: string
   categorie: string
 }

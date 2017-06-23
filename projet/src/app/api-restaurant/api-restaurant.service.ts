@@ -68,8 +68,16 @@ export class ApiRestaurant {
         let endPoint = "restaurants";
         
         return this.http
-        .post(this.baseUrl + endPoint, JSON.stringify({'name': restaurant.name, 'categorie':categorie}), {headers: this.headers})   
-            .map((res) => res.json());
+        .post(this.baseUrl + endPoint, JSON.stringify(
+            {'name': restaurant.name,
+             'categorie':categorie, 
+             'city':restaurant.city,
+             'latitude':restaurant.latitude,
+             'longitude':restaurant.longitude,
+             'image':restaurant.image
+            }), {headers: this.headers}
+        )   
+        .map((res) => res.json());
     }
 
 }
