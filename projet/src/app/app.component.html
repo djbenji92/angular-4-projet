@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">BeerIdeas</a>
+      <a class="navbar-brand" href="#">RestoIdeas</a>
 
       <button
         class="btn btn-primary btn-margin"
@@ -26,7 +26,7 @@
       <button
         class="btn btn-primary btn-margin"
         routerLink="/categories">
-          Catégories de restaurants
+          Nos différentes cuisines
       </button>
 
       <button
@@ -37,19 +37,22 @@
 
       <button
         class="btn btn-primary btn-margin"
-        routerLink="/categories/new">
-          Ajouter une catégorie
+        routerLink="/categories/new"
+        *ngIf="auth.isAuthenticated()">
+          Ajouter une catégorie de cuisine
       </button>
 
       <button
         class="btn btn-primary btn-margin"
-        routerLink="/categories/delete">
-          Supprimer une catégorie
+        routerLink="/categories/delete"
+        *ngIf="auth.isAuthenticated()">
+          Supprimer une catégorie de cuisine
       </button>
 
       <button
         class="btn btn-primary btn-margin"
-        routerLink="/restaurants/new">
+        routerLink="/restaurants/new"
+        *ngIf="auth.isAuthenticated()">
           Ajouter un restaurant
       </button>
 

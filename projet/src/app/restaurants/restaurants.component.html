@@ -3,10 +3,8 @@
 </p>
 
 <li *ngFor="let restaurant of restaurants">
+    <img *ngIf="restaurant.image" src="{{restaurant.image}}" style="height:80px">
     {{restaurant.name}}
-    <!--<a [routerLink]="['/restaurant-detail', restaurant._id]">
-    	Détails
-    </a>-->
     
     <a [routerLink]="['/restaurants/edit', restaurant._id]">
     	Editer
