@@ -9,12 +9,17 @@ import { Restaurant } from '../restaurants/restaurants.model';
 @Injectable()
 export class ApiRestaurant {
 
+    //url du serveur nodeJS
     private baseUrl = 'http://localhost:3000/';
     private headers = new Headers({'Content-Type': 'application/json'});
 
+    //injecte la méthode HTTP pour pouvoir faire des requetes
     constructor(private http: Http) {
      }
 
+    /*  url: localhost:3000/categories/:id 
+        méthode: GET
+        description: permet la récupération d'une catégorie */
     getCategorie(id: any){
       let endPoint = "categories/"+id
 
@@ -22,6 +27,9 @@ export class ApiRestaurant {
              .map((res) => res.json()); 
     }
 
+    /*  url: localhost:3000/categories 
+        méthode: GET
+        description: permet la récupération de l'ensemble des catégories */
     getCategories(){
         let endPoint = "categories";
 
@@ -29,6 +37,9 @@ export class ApiRestaurant {
              .map((res) => res.json()); 
     }
 
+    /*  url: localhost:3000/restaurants/:id
+        méthode: GET
+        description: permet la récupération d'un restaurant */
     getRestaurant(id: any){
       let endPoint = "restaurants/"+id
 
@@ -36,6 +47,9 @@ export class ApiRestaurant {
              .map((res) => res.json()); 
     }
 
+    /*  url: localhost:3000/restaurants 
+        méthode: GET
+        description: permet la récupération de l'ensemble des restaurants */
     getRestaurants(){
         let endPoint = "restaurants";
 
@@ -43,6 +57,10 @@ export class ApiRestaurant {
              .map((res) => res.json()); 
     }
 
+    /*  url: localhost:3000/categories 
+        méthode: POST
+        description: Ajout d'une nouvelle catégorie 
+        paramétres: name: string                  */
     addCategorie(categorie: Categorie){
         let endPoint = "categories";
         
@@ -53,6 +71,10 @@ export class ApiRestaurant {
             .map((res) => res.json());
     }
 
+    /*  url: localhost:3000/categories/:id
+        méthode: DELETE
+        description: permet la suppression d'une catégorie
+        paramétres: id:string                          */
     deleteCategorie(id: string){
     
         let endPoint = "categories/" + id;
@@ -62,6 +84,10 @@ export class ApiRestaurant {
             .map((res) => res.json());
     }
 
+    /*  url: localhost:3000/categories/:id
+        méthode: UPDATE
+        description: permet la modification d'une catégorie
+        paramétres: id:string                          */
     updateCategorie(categorie: Categorie){
         let endPoint = "categories/"+categorie._id;
         console.log(categorie);
@@ -75,6 +101,10 @@ export class ApiRestaurant {
             });
     }
 
+    /*  url: localhost:3000/restaurant/:id
+        méthode: POST
+        description: permet l'ajout d'un restaurant
+        paramétres: id:string                          */
     addRestaurant(restaurant: Restaurant, categorie: string){
         let endPoint = "restaurants";
         
@@ -91,6 +121,10 @@ export class ApiRestaurant {
         .map((res) => res.json());
     }
 
+    /*  url: localhost:3000/restaurant/:id
+        méthode: UPDATE
+        description: permet de mettre à jour un restaurant
+        paramétres: id:string                          */
     updateRestaurant(restaurant: Restaurant){
         let endPoint = "restaurants/"+restaurant._id;
         console.log(restaurant);
@@ -104,6 +138,10 @@ export class ApiRestaurant {
             });
     }
 
+    /*  url: localhost:3000/categories/:id
+        méthode: DELETE
+        description: permet la suppression d'un restaurant
+        paramétres: id:string                          */
     deleteRestaurant(id: string){
     
         let endPoint = "restaurants/" + id;
